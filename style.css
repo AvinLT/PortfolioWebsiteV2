@@ -34,6 +34,22 @@ main {
   --duo: #105d67;
 }
 
+/* Ensure Font Awesome icons are displayed correctly */
+.icon-link {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Icon color */
+  font-size: 1.5rem; /* Adjust icon size */
+  margin: 0 10px; /* Space between icons */
+}
+
+.icon-link:hover {
+  color: #0056b3; /* Change color on hover, example for LinkedIn blue */
+}
+
+.resume-link {
+  display: none; /* Hide the text link if not used */
+}
+
 .nav {
   max-width: 1560px;
   padding: 30px 25px;
@@ -52,7 +68,7 @@ main {
 
 .nav-left > *,
 .nav-right > * {
-  margin: 10px;
+  margin: 15px;
   font-size: 1.15rem;
 }
 
@@ -81,6 +97,91 @@ main {
 
 .about {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 35px;
+}
+
+.about .about-text {
+  max-width: 500px;
+}
+
+.about .about-text h3 {
+  font-size: 35px;
+}
+
+.about .about-text p {
+  font-size: 20px;
+}
+
+.about img {
+  width: 25rem;
+  height: 30rem;
+  background-color: #105d67;
+}
+
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keeps text on the left */
+}
+
+.work-experience h2 {
+  margin-bottom: 20px; /* Adds some space between the heading and the table */
+}
+
+.work-experience .table-container {
+  display: flex;
+  justify-content: center; /* Centers the table within this container */
+  width: 100%; /* Ensures the container takes up the full width */
+}
+
+.work-experience table {
+  max-width: 900px;
+  width: 100%; /* Makes the table responsive */
+  border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.projects,
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keeps the headings on the left */
+  margin: 20px 0; /* Adds space between sections */
+}
+
+.projects h2,
+.education h2 {
+  margin-bottom: 20px; /* Adds space between heading and content */
+}
+
+.table-container {
+  display: flex; /* Makes this a flex container */
+  justify-content: center; /* Centers the table horizontally */
+  width: 100%; /* Ensures the container spans the full width */
+}
+
+.projects table {
+  max-width: 900px; /* Limits the maximum width of the table */
+  width: 100%; /* Makes the table responsive */
+  border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.projects table th,
+.projects table td {
+  padding: 10px; /* Adds padding inside table cells */
+}
+
+.content-container {
+  display: flex; /* Makes this a flex container */
+  justify-content: center; /* Centers the content horizontally */
+  width: 100%; /* Ensures the container spans the full width */
+}
+
+.content-container ul {
+  list-style-type: none; /* Removes bullet points */
+}
+
+.content-container li {
+  margin-bottom: 20px; /* Adds space between list items */
 }
