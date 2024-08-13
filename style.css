@@ -119,27 +119,54 @@ main {
   height: 30rem;
   background-color: #105d67;
 }
-
 .work-experience {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Keeps text on the left */
+  align-items: flex-start; /* Aligns the title to the left */
+  margin-left: 35px; /* Adjust margin as needed */
 }
-
-.work-experience h2 {
-  margin-bottom: 20px; /* Adds some space between the heading and the table */
-}
-
-.work-experience .table-container {
+.projects,
+.education {
   display: flex;
-  justify-content: center; /* Centers the table within this container */
-  width: 100%; /* Ensures the container takes up the full width */
+  flex-direction: column;
+  align-items: flex-start; /* Aligns the title to the left */
+  margin-left: 35px; /* Adjust margin as needed */
 }
 
-.work-experience table {
-  max-width: 900px;
-  width: 100%; /* Makes the table responsive */
-  border-collapse: collapse; /* Ensures borders don't double up */
+.projects-container,
+.education-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px; /* Adjust based on your layout */
+  margin: 0 auto; /* Centers the container */
+}
+
+.main-section {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ccc;
+}
+
+/* Specific styles for the projects and education sections */
+.projects-container .main-section,
+.education-container .main-section {
+  text-align: center; /* Center text within each section */
+}
+
+.projects-container .divider,
+.education-container .divider {
+  height: 100%; /* Full height for the vertical divider */
 }
 
 .projects,
