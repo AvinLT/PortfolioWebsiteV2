@@ -216,3 +216,11 @@ main {
 .content-container li {
   margin-bottom: 20px; /* Adds space between list items */
 }
+
+.education h2 {
+  margin: 0px 0px 25px 0px;
+}
+
+.education h3 {
+  margin: 0px 0px 10px 0px;
+}
