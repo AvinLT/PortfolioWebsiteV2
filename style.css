@@ -4,15 +4,9 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   background-color: #ebf4fa;
   border: 20px solid white;
-  height: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -54,12 +48,12 @@ main {
 
 .nav {
   max-width: 1560px;
-  padding: 30px 25px;
+  padding: 30px 0px;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  margin: 0px 75px 0px 75px;
 }
 
 .nav-left,
@@ -138,7 +132,6 @@ main {
   display: flex;
   border: 1px solid #000000;
   border-radius: 15px;
-  overflow: hidden;
   width: 100%;
   max-width: 900px; /* Adjust based on your layout */
   margin: 0 auto; /* Centers the container */
@@ -153,6 +146,12 @@ main {
   justify-content: center;
 }
 
+.nav-left .divider {
+  margin: 0;
+  width: 1px;
+  height: 40px;
+}
+
 .divider {
   width: 1px;
   background-color: #000000;
@@ -163,12 +162,6 @@ main {
 .projects-container .main-section,
 .education-container .main-section {
   text-align: center; /* Center text within each section */
-}
-
-.work-container .divider,
-.projects-container .divider,
-.education-container .divider {
-  height: 100%; /* Full height for the vertical divider */
 }
 
 .work-experience,
@@ -223,4 +216,20 @@ main {
 
 .education h3 {
   margin: 0px 0px 10px 0px;
+}
+
+.education ul,
+.projects > ul > li > ul,
+.work-experience > ul > li > ul {
+  border: 1px solid #000000;
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 100%;
+  margin: 15px auto; /* Centers the container */
+}
+
+.education > ul > li,
+.projects > ul > li,
+.work-experience ul li {
+  margin: 15px 0; /* Adds space above and below each list item */
 }
