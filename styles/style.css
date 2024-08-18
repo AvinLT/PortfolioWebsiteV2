@@ -1,26 +1,11 @@
+/* Resetting styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #ebf4fa;
-  border: 20px solid white;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  font-family: "Inknut Antiqua", serif;
-}
-
-main {
-  flex: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 75px 75px 75px;
-}
-
+/* Root variables for colors */
 :root {
   --bg: #f4f9fc;
   --line: #6000cb;
@@ -30,7 +15,26 @@ main {
   --duo: #105d67;
 }
 
-/* Ensure Font Awesome icons are displayed correctly */
+/* Global body styling */
+body {
+  background-color: #ebf4fa;
+  border: 20px solid white;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Inknut Antiqua", serif;
+}
+
+/* Main container styling */
+main {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 75px 75px 75px;
+}
+
+/* Icon links styling */
 .icon-link {
   text-decoration: none; /* Remove underline */
   color: black; /* Icon color */
@@ -39,21 +43,22 @@ main {
 }
 
 .icon-link:hover {
-  color: #0056b3; /* Change color on hover, example for LinkedIn blue */
+  color: #0056b3; /* Change color on hover */
 }
 
 .resume-link {
   display: none; /* Hide the text link if not used */
 }
 
+/* Navigation bar styling */
 .nav {
   max-width: 1560px;
-  padding: 30px 0px;
+  padding: 30px 0;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 55px 0px 55px;
+  margin: 0 55px;
 }
 
 .nav-left,
@@ -68,29 +73,67 @@ main {
   font-size: 1.15rem;
 }
 
-.dropdown a {
-  display: block;
-  text-decoration: none;
-  font-family: Bitter, arial;
-  padding: 10px;
-  color: black;
+.nav-right {
+  justify-content: flex-end; /* Aligns icons to the right */
+}
+
+/* Dropdown menu styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: "Inknut Antiqua", serif;
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown:hover {
+  background-color: var(--duo);
+  color: white;
 }
 
 .dropdown .content {
   display: none;
   position: absolute;
   background-color: var(--fill);
-  min-width: 100px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%; /* Ensures the dropdown content appears below the dropdown button */
+  left: 0;
 }
 
 .dropdown:hover .content {
   display: block;
 }
 
-.dropdown a:hover {
+.dropdown .content a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  padding: 1px 10px;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown .content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown .content a:hover {
+  background-color: var(--duo);
   color: white;
 }
 
+.dropdown .content a:active {
+  background-color: var(--text);
+  color: white;
+}
+
+/* About section styling */
 .about {
   display: flex;
   justify-content: space-between;
@@ -117,26 +160,29 @@ main {
   margin-right: 80px;
 }
 
+/* Work experience, projects, and education sections styling */
 .work-experience,
 .projects,
 .education {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns the title to the left */
-  margin-left: 35px; /* Adjust margin as needed */
+  align-items: flex-start;
+  margin: 20px 0;
 }
 
+/* Container styling for work, projects, and education sections */
 .work-container,
 .projects-container,
 .education-container {
   display: flex;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-radius: 15px;
   width: 100%;
-  max-width: 900px; /* Adjust based on your layout */
-  margin: 0 auto; /* Centers the container */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* Main section within work, projects, and education containers */
 .main-section {
   flex: 1;
   padding: 20px;
@@ -146,115 +192,104 @@ main {
   justify-content: center;
 }
 
-.nav-left .divider {
-  margin: 0;
-  width: 1px;
-  height: 40px;
-}
-
-.divider {
-  width: 1px;
-  background-color: #000000;
-}
-
-/* Specific styles for the projects and education sections */
 .work-container .main-section,
 .projects-container .main-section,
 .education-container .main-section {
   text-align: center; /* Center text within each section */
 }
 
-.work-experience,
-.projects,
-.education {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Keeps the headings on the left */
-  margin: 20px 0; /* Adds space between sections */
+/* Divider styling */
+.divider,
+.nav-left .divider {
+  width: 1px;
+  background-color: #000;
 }
 
+.nav-left .divider {
+  margin: 0;
+  height: 40px;
+}
+
+/* Projects and education section specific styles */
 .work-experience,
 .projects h2,
 .education h2 {
-  margin-bottom: 20px; /* Adds space between heading and content */
+  margin-bottom: 20px;
 }
 
 .table-container {
-  display: flex; /* Makes this a flex container */
-  justify-content: center; /* Centers the table horizontally */
-  width: 100%; /* Ensures the container spans the full width */
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .projects table {
-  max-width: 900px; /* Limits the maximum width of the table */
-  width: 100%; /* Makes the table responsive */
-  border-collapse: collapse; /* Ensures borders don't double up */
+  max-width: 900px;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .projects table th,
 .projects table td {
-  padding: 10px; /* Adds padding inside table cells */
+  padding: 10px;
 }
 
+/* Content container styling */
 .content-container {
-  display: flex; /* Makes this a flex container */
-  justify-content: center; /* Centers the content horizontally */
-  width: 100%; /* Ensures the container spans the full width */
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .content-container ul {
-  list-style-type: none; /* Removes bullet points */
+  list-style-type: none;
 }
 
 .content-container li {
-  margin-bottom: 20px; /* Adds space between list items */
+  margin-bottom: 20px;
 }
 
+/* Education section headers */
 .education h2 {
-  margin: 0px 0px 25px 0px;
+  margin: 0 0 25px 0;
 }
 
 .education h3 {
-  margin: 0px 0px 10px 0px;
+  margin: 0 0 10px 0;
 }
 
+/* List styling for education, projects, and work experience */
 .education ul,
 .projects > ul > li > ul,
 .work-experience > ul > li > ul {
-  border: 1px solid #000000;
+  border: 1px solid #000;
   padding: 30px 40px;
   border-radius: 15px;
   width: 100%;
-  margin: 15px auto; /* Centers the container */
+  margin: 15px auto;
 }
 
 .education > ul > li,
 .projects > ul > li,
 .work-experience ul li {
-  margin: 15px 0; /* Adds space above and below each list item */
-}
-/* Base styles for the header */
-.nav-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Aligns icons to the right */
+  margin: 15px 0;
 }
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .nav {
-    align-items: flex-start; /* Aligns content to the left */
+    align-items: flex-start;
   }
 
   .nav-right {
-    justify-content: flex-start; /* Aligns icons to the left on mobile */
-    flex-direction: row; /* Ensures icons remain in a horizontal line */
-    flex-wrap: wrap; /* Allows icons to wrap if necessary */
-    margin-top: 10px; /* Adds some space between menu and icons */
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
   }
 
   .icon-link {
-    margin: 5px; /* Adds some space between icons */
+    margin: 5px;
   }
 
   .about {
@@ -291,7 +326,6 @@ main {
     text-align: left;
   }
 
-  /* Adjust the sections' padding on mobile */
   main {
     padding: 20px 20px 50px 20px;
   }
