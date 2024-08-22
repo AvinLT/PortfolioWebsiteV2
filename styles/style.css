@@ -210,6 +210,24 @@ main {
   height: 40px;
 }
 
+/* Remove text decoration and color change on the links */
+.main-section-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Makes the whole section clickable */
+  flex: 1; /* Makes the link cover the entire main-section */
+}
+
+.main-section-link:hover .main-section {
+  background-color: #f0f0f0; /* Change background on hover for better UX */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Optional: Change the cursor to a pointer when hovering */
+.main-section-link {
+  cursor: pointer;
+}
+
 /* Projects and education section specific styles */
 .work-experience,
 .projects h2,
