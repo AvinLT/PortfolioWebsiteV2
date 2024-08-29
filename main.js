@@ -1,17 +1,27 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.querySelector(".dropdown");
+// Select the dropdown button and menu
+const dropdownBtn = document.querySelector(".dropdown");
+const dropdownMenu = document.querySelector(".content");
 
-  // Toggle the dropdown when clicking on the menu
-  dropdown.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevent click from propagating to the document
-    this.classList.toggle("active");
-  });
+// Function to toggle the visibility of the dropdown menu
+const toggleDropdownVisibility = function () {
+  dropdownMenu.classList.toggle("show");
+};
 
-  // Close the dropdown if the user clicks outside of it
-  document.addEventListener("click", function () {
-    if (dropdown.classList.contains("active")) {
-      dropdown.classList.remove("active");
-    }
-  });
+// Event listener to toggle the dropdown open/close when the button is clicked
+dropdownBtn.addEventListener("click", function (e) {
+  e.stopPropagation(); // Prevent the event from propagating to parent elements
+  toggleDropdownVisibility();
+});
+
+// Event listener to close the dropdown when clicking outside of it
+document.documentElement.addEventListener("click", function () {
+  if (dropdownMenu.classList.contains("show")) {
+    toggleDropdownVisibility();
+  }
+});
+
+// Event listener to close the dropdown when a link inside it is clicked
+dropdownMenu.addEventListener("click", function (e) {
+  e.stopPropagation(); // Prevent the document click listener from closing the menu
+  toggleDropdownVisibility(); // Close the dropdown after a selection is made
 });
