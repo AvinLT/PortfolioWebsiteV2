@@ -25,3 +25,8 @@ dropdownMenu.addEventListener("click", function (e) {
   e.stopPropagation(); // Prevent the document click listener from closing the menu
   toggleDropdownVisibility(); // Close the dropdown after a selection is made
 });
+
+function toggleMenu() {
+  const menu = document.getElementById("fullpageMenu");
+  menu.classList.toggle("menu-open");
+}
