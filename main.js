@@ -29,4 +29,25 @@ dropdownMenu.addEventListener("click", function (e) {
 function toggleMenu() {
   const menu = document.getElementById("fullpageMenu");
   menu.classList.toggle("menu-open");
+
+  // Check if the menu is opening or closing
+  if (menu.classList.contains("menu-open")) {
+    // Delay the slide-in of links until after the menu has fully dropped down
+    setTimeout(() => {
+      const links = document.querySelectorAll(".menu-content div");
+      links.forEach((link, index) => {
+        setTimeout(() => {
+          link.style.opacity = "1";
+          link.style.transform = "translateX(0)";
+        }, index * 100); // Delay each link slightly for staggered effect
+      });
+    }, 500); // Wait for the menu drop down animation to complete
+  } else {
+    // Reset the links when closing the menu
+    const links = document.querySelectorAll(".menu-content div");
+    links.forEach((link) => {
+      link.style.opacity = "0";
+      link.style.transform = "translateX(100%)";
+    });
+  }
 }

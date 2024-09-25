@@ -137,7 +137,7 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95); /* Light overlay */
+  background-color: rgba(255, 255, 255, 1); /* Light overlay */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,6 +160,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   margin: 0 55px;
+  gap: 350px; /* Increase or decrease this value as needed */
 }
 
 .menu-toggle {
@@ -169,6 +170,21 @@ main {
 /* Show menu */
 .menu-open {
   top: -20px; /* Slide down to reveal */
+  display: block;
+  opacity: 1;
+}
+
+/* Links inside the menu */
+.menu-content div {
+  opacity: 0;
+  transform: translateX(100%); /* Off-screen to the right */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide in the links */
+.menu-open .menu-content div {
+  opacity: 1;
+  transform: translateX(0); /* Slide in to original position */
 }
 
 .nav-left > *:not(.fullpage-menu),
