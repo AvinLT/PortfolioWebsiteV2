@@ -71,8 +71,38 @@
             year of Computer Science degree at McMaster Uni.
           </p>
         </div>
-        <img src="assets/self.png" alt="My Photo" width="400" height="450" />
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img
+              src="assets/self.jpg"
+              alt="My Photo"
+              width="400"
+              height="450"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="assets/self2.jpg"
+              alt="Image 2"
+              width="400"
+              height="450"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="assets/self3.jpg"
+              alt="Image 3"
+              width="400"
+              height="450"
+            />
+          </div>
+
+          <!-- Navigation buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
       </section>
+
       <section class="work-experience">
         <h2>Work Experience</h2>
         <div class="work-container">
@@ -144,6 +174,7 @@
         </div>
       </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

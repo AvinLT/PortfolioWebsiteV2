@@ -2,6 +2,41 @@
 const dropdownBtn = document.querySelector(".dropdown");
 const dropdownMenu = document.querySelector(".content");
 
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Function to change slides
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+// Function to show the current slide
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+
+  // Loop around the slides
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Show the current slide
+  slides[slideIndex - 1].style.display = "block";
+}
+
+// Optional: Auto change slides every 5 seconds
+setInterval(() => {
+  plusSlides(1);
+}, 5000);
+
 // Function to toggle the visibility of the dropdown menu
 const toggleDropdownVisibility = function () {
   dropdownMenu.classList.toggle("show");

@@ -149,7 +149,7 @@ main {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  margin: 20px;
+  margin: 200px 20px 20px 20px;
   text-decoration: none;
   color: #0f1b61;
   font-weight: bold;
@@ -159,8 +159,12 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 55px;
+  margin: 0 275px;
   gap: 350px; /* Increase or decrease this value as needed */
+}
+
+.menu-content div div {
+  font-size: 20px;
 }
 
 .menu-toggle {
@@ -209,6 +213,45 @@ main {
   height: 30rem;
   border-radius: 90px;
   margin-right: 80px;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 400px; /* Adjust according to your needs */
+  margin: auto;
+}
+
+.mySlides {
+  display: none; /* Hide all images by default */
+}
+
+img {
+  width: 100%; /* Make images responsive */
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Work experience, projects, and education sections styling */
@@ -332,7 +375,41 @@ main {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .nav {
-    align-items: flex-start;
+    flex-direction: column; /* Stack navigation elements vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem; /* Increase size for better touch targets */
+    margin-bottom: 10px; /* Space below toggle */
+  }
+
+  .fullpage-menu {
+    margin: 0; /* Remove margin for mobile */
+    padding: 0; /* Remove padding for mobile */
+  }
+
+  .menu-content {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    margin: 350px 20px 20px 20px; /* Add margin around menu content */
+  }
+
+  .menu-content > div {
+    margin: 0; /* Reset margin for menu items */
+    gap: 0; /* Remove gap for better mobile view */
+  }
+
+  .menu-content div {
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .menu-content div a {
+    font-size: 20px;
+  }
+
+  .menu-content div div {
+    font-size: 2px;
+    visibility: hidden;
   }
 
   .nav-right {
